@@ -1,0 +1,30 @@
+﻿@model SoftwareASPViewDinamica.Models.Student
+
+@{
+    Layout = null;
+}
+<!--Estamos definiendo la vista del CREATE del METODO
+
+      public ActionResult Create()
+        {
+            return View();
+        }
+
+
+    -->
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+   <!--ACA IBa antes todo lo que estamos poniendo en la vista PARTIAL _Create
+       
+       Simil MasterPAGE-->
+    <!--(Nombre de la vista Partial)-->
+    @Html.Partial("_Create");
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <h2>
+           @ViewBag.miMensaje
+        </h2>
+
+
+        <!--Vinculamos todo el FIlder de Student-->
+        <!--(lo que ve el cliente,METODO,CONTROLER)-->
+        @Html.ActionLink("Ir a Estudiante", "Index", "Student");
+
+
+        <!--Estamos apuntando a
+        public ActionResult Index()
+    {  List<Student> lista = new List<Student>() {
+            new Student
+            {
+                StudentId=1,Name="Juan",Gender="Male",City="La Plata",Address="Brasil Ramos Mejia"
+            }
+        };
+        return View(lista);
+    }        -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,116 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Form</title>
+</head>
+<body>
+    <div> 
+        <!--Form es el metodo de ACCION-->
+        <!--El CONTROLER es Home-->
+        <!--Indicamos el FormMethod-->
+        @using (Html.BeginForm("Form","Home",FormMethod.Post))
+        {
+
+        <table>
+            <tr>
+                <!--(key,vista cliente)-->
+                <td>@Html.Label("Name","Name")</td>
+                <!--(Key,null,css )-->
+                <!--new {arroba  class = "textbox",placeholder="Enter Name"}-->
+                <td>@Html.TextBox("txtName",null,new { @class = "textbox",placeHolder = "Enter Name" })</td>
+            </tr>
+
+            <tr>
+                <td>@Html.Label("Address", "Address")</td>
+                <!--(key,null,css)-->
+                <!--cols="5",rows="4"-->
+                <td>@Html.TextArea("Address", null, new { @class = "textarea", cols = "5", rows = "4", placeHolder = "Enter Address" })</td>
+            </tr>
+
+            <tr>
+                <td>@Html.Label("Gender","Gender")</td>
+                <!--DropDown es como un COMBOBOX
+                <td> arroba Html.DropDownList</td>-->
+                <!--(Key,vista Cliente,boolean para el default)-->
+                <td>
+                     Male:     @Html.RadioButton("Gender","Male",true)
+                     Female:   @Html.RadioButton("Gender","Famale",false)
+                </td>
+            </tr>
+            
+            <tr>
+                <td>@Html.Label("IsMarried","Is Married")</td>
+                <td>
+                    
+                    @Html.CheckBox("IsMarried",false)
+
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.Label("Country","Country")</td>
+            </tr>
+
+
+                <!--(key,listaItem{valores})-->
+            <tr>
+                <td>
+                    @Html.DropDownList("Country",
+                                new List<SelectListItem> {
+                                   //Insertamos los ITEM con una declaracion
+                                   //DECLARATIVA
+
+                                    new SelectListItem{
+                                        Text ="Argentine",
+                                        Value ="0",
+                                        Selected=true
+                                    },
+                                    new SelectListItem
+                                    {
+                                        Text="Uruguay",
+                                        Value="1"
+                                    },
+                                    new SelectListItem
+                                    {
+                                        Text="Brasil",
+                                        Value="3"
+                                    }
+
+                                }
+
+
+                                );
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>@Html.Label("Password", "Password")</td>
+                <td>
+                    <!--(Key)-->
+                    @Html.Password("Password")
+                </td>
+
+            </tr>
+
+            <tr>
+                <td>
+                    <!---->
+                    <input type="submit" value="Guardar"/>
+                </td>
+            </tr>
+
+        </table>
+
+
+        }
+        
+    </div>
+</body>
+</html>
